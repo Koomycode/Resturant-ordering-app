@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --dark-color: #0c1821;
+
+    --rad-1: #383838;
+    --rad-2: #323232;
+    --rad-3: #272727;
+    --rad-4: #232323;
+    --rad-5: #121212;
+
+    --white-1: #f1faee;
+    --white-2: #edf6f9;
+    --white-3: #fefae0;
+
+    --font-logo: 'Lobster', cursive;
+    --font-title: 'Abril Fatface', cursive;
+    --font-normal: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-normal)
+}
+
+body {
+    background: radial-gradient(circle,
+            var(--rad-1),
+            var(--rad-2),
+            var(--rad-3),
+            var(--rad-4),
+            var(--rad-5));
+    background-repeat: no-repeat;
+    color: var(--white-2);
+    font-size: 17px;
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(./images/background2.jpg);
+    z-index: -1;
+    filter: blur(3px);
+    background-position: center;
+    background-size: cover;
+}
+
+/* ----- Header ----- */
+
+.header {
+    justify-content: space-between;
+    padding: 10px 30px;
+    color: var(--dark-color);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+}
+
+.header::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    height: 130px;
+    z-index: -1;
+    background: #ffffffd4;
+    transform-origin: 0px 0px;
+    transform: skewY(-6deg);
+    overflow: hidden;
+}
+
+.logo {
+    width: 80px;
+}
+
+.title {
+    font-family: var(--font-logo);
+    font-weight: 400;
+    position: relative;
+    top: 11px;
+    background: -webkit-linear-gradient(#FA6100, #FF5001, #FD2A04, #dc2f02, var(--dark-color), black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title span {
+    font-family: var(--font-logo);
+    background: -webkit-linear-gradient(#FA6100, #FD2A04, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: absolute;
+    top: -17px;
+    left: 28px;
+}
+
+/* ----- Main ----- */
+
+.main {
+    padding: 30px 10px 10px;
+    min-height: 80vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ----- Menu section ----- */
+
+.menu-section {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+
+.big-img-container {
+    position: absolute;
+    width: 95%;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.big-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.food-container {
+    padding-block: .6rem;
+    justify-content: space-evenly;
+}
+
+.food-img {
+    width: 120px;
+    border-radius: 5px;
+    cursor: zoom-in;
+}
+
+.food-discribtion {
+    flex-direction: column;
+    height: 85px;
+    align-items: start;
+    justify-content: start;
+    width: 51%;
+}
+
+.food-name {
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.food-ing {
+    margin-block: 2.5px;
+    font-size: 9px;
+    flex: 1;
+    width: 96%;
+}
+
+.food-price {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.add {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.add i {
+    font-size: 1.6rem;
+    color: var(--white-3);
+    color: #FD2A04;
+}
+
+
+/* ----- Order section ----- */
+.order-section {
+    width: 100%;
+    padding: 5px;
+}
+
+.order-section h2 {
+    text-align: center;
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.order-box {
+    width: 100%;
+    justify-content: space-between;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.remove {
+    cursor: pointer;
+    font-size: 8px;
+    color: var(--white-3);
+    color: #FD2A04;
+    position: relative;
+    bottom: 1.5px;
+}
+
+hr {
+    margin-block: 5px;
+}
+
+.total-price-box {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.place-order {
+    width: 100%;
+    background: #FD2A04;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    cursor: pointer;
+    color: var(--white-2);
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 2.5px;
+}
+
+/* ------ Checkout section ------ */
+
+.check-out-section {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: none;
+}
+
+form {
+    flex-direction: column;
+    width: 100%;
+    background: var(--white-1);
+    color: #FA6100;
+    padding: 20px;
+    box-shadow:
+        1px 1px 10px #000,
+        1px 1px 30px #000,
+        1px 1px 50px #000,
+        5px 5px 70px #000,
+        10px 10px 90px #000,
+        30px 30px 150px #000;
+}
+
+form h4 {
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    margin-block: 4px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    background: #FA6100;
+    color: var(--white-2);
+    font-weight: 600;
+}
+
+form input::placeholder {
+    color: #ffffffb0;
+}
+
+.pay {
+    margin: 20px 0 0;
+    width: 100%;
+    background: #FA6100;
+    color: var(--white-2);
+    border: none;
+    outline: none;
+    border-radius: 2.5px;
+    padding: 5px 0;
+    font-weight: 600;
+}
